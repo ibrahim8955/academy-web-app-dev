@@ -1,7 +1,15 @@
 ---
-title: UI library
+title: Day 2 | UI library
 sidebar_position: 30
 ---
+
+:::danger[work in progress]
+Owned and will be updated by **Tom**
+- people will start from scratch
+- day 3 (appruntime) will build on top of this
+
+Content here is draft copy from 2022 workshop: https://github.com/dhis2/academy-web-app-dev-2022/tree/main/workshop/02-ui-library
+:::
 
 ## 1. Introduction
 
@@ -57,7 +65,7 @@ action is required by you in order to complete the task.
 <a name="training-environment" href=""></a>
 ## 2. Training environment
 
-Please follow [this step-by-step guide](../before-academy/GET_STARTED.md#working-on-directories-that-contain-starter-code) on how to setup your local enviornment and start working on this assignment.
+Please follow [this step-by-step guide](../resources/GET_STARTED.md#working-on-directories-that-contain-starter-code) on how to setup your local enviornment and start working on this assignment.
 
 <a name="src-structure" href=""></a>
 ## 3. Structure inside the `src` folder
@@ -114,7 +122,7 @@ The `src/App.js` renders a component called `Navigation`. It already exists in
 
 Once all steps have been completed, the sidebar should look like this:
 
-![Finished sidebar](./assets/sidebar_finished.jpg)
+![Finished sidebar](../assets/sidebar_finished.jpg)
 
 As you can see, there are three menu items. These are already prepared in the
 code of the navigation, but the actual components are missing.
@@ -173,7 +181,7 @@ has finished & succeeded, data will have the following shape:
 
 Once all steps have been completed, the attributes page should look like this:
 
-![Finished attributes page](./assets/finished_attributes_page.jpg)
+![Finished attributes page](../assets/finished_attributes_page.jpg)
 
 The components required to complete the task are:
 
@@ -224,13 +232,13 @@ The file that you will have to work on is `src/views/Form.js`.
 
 Once all steps have been completed, the attributes page should look like this:
 
-![Finished form page](./assets/finished_form_page.jpg)
+![Finished form page](../assets/finished_form_page.jpg)
 
 If the form validation fails, then the form should contains the respective
 error message. In the following image all fields that have a validation
 function are invalid:
 
-![Invalid form](./assets/invalid_form.jpg)
+![Invalid form](../assets/invalid_form.jpg)
 
 <a name="task-3--validation" href=""></a>
 #### The validation
@@ -303,4 +311,4 @@ If you think you're done, you can compare your result with the solution in the `
 
 ### Submit your assignment
 
-When you're ready, please follow these [instructions](../before-academy/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.
+When you're ready, please follow these [instructions](../resources/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.

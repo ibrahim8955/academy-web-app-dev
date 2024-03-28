@@ -1,8 +1,13 @@
 ---
-sidebar_position: 10
+title: (?obsolete) Get Started
+sidebar_position: 20
 ---
 
 # Get Started
+
+:::danger[ToDo]
+- Will we use GitHub Classroom?
+:::
 
 This guide will help you get started with GitHub Classroom and will show you how to setup your local environment for working and submitting your assignments.
 
@@ -10,11 +15,11 @@ This guide will help you get started with GitHub Classroom and will show you how
 
 When you receive the invitation link, you will see the following:
 
-![accept-invitation](./assets/resources/accept-invitation.png)
+![accept-invitation](../assets/accept-invitation.png)
 
 Once you accept the invitation, a GitHub repository will be created for you. **Refresh** the page to see your repo. Note that your username will be automatically added as shown below:
 
-![accept-invitation](./assets/resources/repo-student-name.png)
+![accept-invitation](../assets/repo-student-name.png)
 
 Next, let's setup your local environment.
 
@@ -67,12 +72,12 @@ You are now ready to start your application locally!
 
 * From the browser, go to [http://localhost:3000](http://localhost:3000). You will see the following page:
 
-![](./assets/resources/new-app-login-page.png)
+![](../assets/new-app-login-page.png)
 
 * Before you sign in, you need to log in to the DHIS2 instance which will be your **server**:
   - Go to: https://academy.demos.dhis2.org/web-app
   - You will see this page:
-![](./assets/resources/image-of-login.png)
+![](../assets/image-of-login.png)
   - Sign in as username: `admin` and password: `district`
 
 * Finally, go back to [http://localhost:3000](http://localhost:3000) and enter the following:
@@ -85,7 +90,7 @@ password: district
 
 * You should now be able to see your application on the browser. By default the page will look like this:
 
-![](./assets/resources/new-app-login-success.png)
+![](../assets/new-app-login-success.png)
 
 > **NOTE**: If you're getting some errors and can't connect to the server or you're unable to sign in, please check these possible [solutions](./DEBUG.md)
 

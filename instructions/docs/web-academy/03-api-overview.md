@@ -1,7 +1,12 @@
 ---
 title: DHIS2 API overview
-sidebar_position: 40
+sidebar_position: 25
 ---
+
+:::danger[work in progress]
+Owned and will be updated by **Austin (or Mozafar?)**
+- Q: will we cover everything in the common session?
+:::
 
 # DHIS2 API Overview
 

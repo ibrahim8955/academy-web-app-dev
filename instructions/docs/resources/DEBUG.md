@@ -1,6 +1,11 @@
 ---
-sidebar_position: 15
+sidebar_position: 10
 ---
+
+:::danger[ToDo]
+- Are all these instructions still applicable?
+:::
+
 # Live instance debugging
 
 If you can't login to the server: https://academy.demos.dhis2.org/web-app/ or you get some Cross-Origin Resource Sharing (CORs) policy issues in the DevTools Console when trying to connect to your application, please try the following troubleshooting steps:
@@ -17,7 +22,7 @@ When you login to your instance, click on the apps icon and search for **System 
 
 See below:
 
-![](../before-academy/assets/resources/cors-whitelist.gif)
+![](../assets/cors-whitelist.gif)
 
 ## If you're using Chrome
 
@@ -49,6 +54,6 @@ If you're having some issues with CodeSandbox:
 
 You could also try disabling the cache from the network tab in Chrome DevTools. See below:
 
-![](./assets/resources/disable-cache.png)
+![](../assets/disable-cache.png)
 
 Hopefully you're now able to connect. If you encounter different errors, please let us know!

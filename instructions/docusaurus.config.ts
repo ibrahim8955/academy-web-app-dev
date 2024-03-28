@@ -66,17 +66,38 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'academySidebar',
-          position: 'left',
-          label: 'Web Academy',
-        },
-        {
-          type: 'docSidebar',
           sidebarId: 'beforeAcademySidebar',
           position: 'left',
           label: 'Before the Academy',
+        },{
+          type: 'docSidebar',
+          sidebarId: 'agenda',
+          position: 'left',
+          label: '📅 Agenda',
         },
-        {to: '/resources', label: 'Resources', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'academySidebar',
+          position: 'left',
+          label: '📚 The Academy',
+        },
+        {
+          type: 'dropdown',
+          label: 'Resources',
+          position: 'left',
+          items: [
+            {
+              type: 'doc',
+              docId: 'resources/resources',
+              label: 'Resources',
+            },
+            {
+              type: 'doc',
+              docId: 'resources/DEBUG',
+              label: 'Debugging',
+            },
+          ],
+        },
         {
           href: 'https://github.com/dhis2/academy-web-app-dev',
           label: 'GitHub',
@@ -88,26 +109,16 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Useful links',
           items: [
             {
               label: 'Resources',
-              to: '/resources',
+              to: 'docs/resources/',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
               label: 'Slack',
               href: 'https://dhis2-dev-community.slack.com',
-            }
-          ],
-        },
-        {
-          title: 'More',
-          items: [
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/dhis2/academy-web-app-dev',

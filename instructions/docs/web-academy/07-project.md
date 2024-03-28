@@ -3,6 +3,12 @@ title: Final project
 sidebar_position: 80
 ---
 
+:::danger[work in progress]
+Will we have a project? will it be only on the last day(s)
+- maybe it's not necessary this time if they're starting from scratch
+:::
+
+
 # Final Project: Build a DHIS2 application
 
 This project will focus on what you've learned during the academy and you will take that knowledge to build a DHIS2 application. 🎊
@@ -17,7 +23,7 @@ You are free to choose the purpose of your application in this project. We only 
 
 ## Requirements
 
-- **Must** be [initiatialized with the DHIS2 Application Platform](./01-setup.md)
+- **Must** be [initiatialized with the DHIS2 Application Platform](../resources/GET_STARTED.md)
 - **Must** use a layout with sidebar navigation. See [example](./02-ui-library.md) from the UI-library exercise.
 - **Must** use [React Router](https://reactrouter.com/web/guides/quick-start) for routing and contain at least two unique routes with route relevant components and data
 - [`@dhis2/ui`](https://ui.dhis2.nu/demo/) components **must**
@@ -29,7 +35,7 @@ You are free to choose the purpose of your application in this project. We only 
 ## Submission details
 
 1. Join GitHub Classroom through this [link](https://classroom.github.com/a/EQw8Kv6H).
-2. Follow these [instructions](../before-academy/GET_STARTED.md) on how to get started with Github Classroom
+2. Follow these [instructions](../resources/GET_STARTED.md) on how to get started with Github Classroom
 3. Feel free to create your application in this directory `project`
 4. Submit your project to Github Classroom
 

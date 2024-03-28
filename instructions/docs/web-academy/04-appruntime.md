@@ -1,7 +1,13 @@
 ---
-title: App Runtime
+title: Day 3 | App Runtime
 sidebar_position: 50
 ---
+
+:::danger[work in progress]
+Owned and will be updated by **Mozafar**
+
+Content here is draft copy from 2022 workshop: https://github.com/dhis2/academy-web-app-dev-2022/tree/main/workshop/04-app-runtime
+:::
 
 ## Workshop - App Runtime Task 1
 
@@ -28,11 +34,11 @@ export const IndicatorsList = () => {
 
 * After you've completed these tasks, your application should look like this:
 
-![](./assets/indicators.png)
+![](../assets/indicators.png)
 
 #### Submit your assignment
 
-When you're ready, please follow these [instructions](../before-academy/GET_STARTED.md#how-to-submit-assignments) to submit your assignment.
+When you're ready, please follow these [instructions](../resources/GET_STARTED.md#how-to-submit-assignments) to submit your assignment.
 
 ### Workshop - App Runtime Task 2
 
@@ -70,7 +76,7 @@ Some handy links:
 ### Tasks intructions
 
 1. There are three simple tasks to be completed. The comments that are important are the ones containing `@TODO` in `src/ProgramsList.js` and `src/DeleteProgram.js`
-2. After you've completed these tasks, please follow these [instructions](../before-academy/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.
+2. After you've completed these tasks, please follow these [instructions](../resources/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.
 
 #### TASK 1 - Using Dynamic queries and variables
 

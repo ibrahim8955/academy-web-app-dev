@@ -1,6 +1,11 @@
 ---
-sidebar_position: 20
+title: (?obsolete) Updating template
+sidebar_position: 30
 ---
+
+:::danger[ToDo]
+- Will they need to pull updates? If yes, Where will these be? 
+:::
 
 # Update Template Instructions
 

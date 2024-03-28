@@ -1,7 +1,13 @@
 ---
-title: Data Store
+title: Day 4 | Data Store
 sidebar_position: 60
 ---
+
+:::danger[work in progress]
+Owned and will be updated by **Sakibou**
+
+Content here is draft copy from 2022 workshop: https://github.com/dhis2/academy-web-app-dev-2022/tree/main/workshop/06-generic-dhis2-apps
+:::
 
 # Making generic DHIS2 apps
 
@@ -14,7 +20,7 @@ Some handy links:
 
 # Data Store Task Instructions
 
-After you've completed the tasks below, please follow these [instructions](../before-academy/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.
+After you've completed the tasks below, please follow these [instructions](../resources/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.
 
 ## TASK 1 - Initialize the DataStoreProvider
 
