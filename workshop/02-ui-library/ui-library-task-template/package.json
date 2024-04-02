@@ -9,17 +9,14 @@
         "start": "d2-app-scripts start",
         "test": "d2-app-scripts test",
         "deploy": "d2-app-scripts deploy",
-        "lint": "d2-style js check && d2-style text check",
-        "format": "d2-style js apply && d2-style text apply"
+        "lint": "d2-style check",
+        "format": "d2-style apply"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^9.0.0",
-        "@dhis2/cli-style": "^7.3.0"
+        "@dhis2/cli-app-scripts": "^11.1.0",
+        "@dhis2/cli-style": "^10.5.1"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^3.4.3",
-        "@dhis2/prop-types": "^2.0.3",
-        "@dhis2/ui": "^6.5.5",
-        "react-router-dom": "^5.2.0"
+        "react-router-dom": "^6.22.3"
     }
 }
