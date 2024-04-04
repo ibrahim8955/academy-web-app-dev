@@ -1,4 +1,4 @@
-    import { Menu, MenuItem } from '@dhis2/ui'
+    import { Menu, MenuItem } from '@dhis2/ui';
 import PropTypes from 'prop-types'
 import React from 'react'
 // @TODO: Import the `Menu` and `MenuItem` components
