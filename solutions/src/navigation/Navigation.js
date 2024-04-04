@@ -9,12 +9,12 @@ const NavigationItem = ({ path, label }) => {
 
     // "null" when not active, "object" when active
     const routeMatch = useMatch(path)
-    
+
     // path is matched if routeMatch is not null
     const isActive = Boolean(routeMatch)
 
     const onClick = () => navigate(path)
-    
+
     return <MenuItem label={label} active={isActive} onClick={onClick} />
 }
 
@@ -24,7 +24,6 @@ NavigationItem.propTypes = {
 }
 
 export const Navigation = () => (
-
     <Menu>
         <NavigationItem
             // Menu item for the home page
