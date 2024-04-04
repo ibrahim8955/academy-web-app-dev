@@ -1,8 +1,3 @@
-/** @TODO: Import the following components and functions from `@dhis2/ui`
- * Button, InputFieldFF, SingleSelectFieldFF, SwitchFieldFF,
- * composeValidators, createEqualTo, email, hasValue
- */
-
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import styles from './Form.module.css'
