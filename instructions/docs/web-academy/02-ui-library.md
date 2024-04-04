@@ -15,14 +15,14 @@ Content here is draft copy from 2022 workshop: https://github.com/dhis2/academy-
 
 ### UI Library recap
 
-At DHIS2 we have a design system which is a collection of design principles and
+As we learned yesterday, at DHIS2 we have a design system which is a collection of design principles and
 a library of UI components for designing applications for the DHIS2 platform.
 Using this system you can design and build applications that are usable,
 powerful and consistent with other DHIS2 applications.
 
 The UI library is our implementation of that design system for react
 environments. It's used by the DHIS2 core developers as well as by 3rd party
-dhis2 apps.
+dhis2 apps. 
 
 The main library, called `ui`, is the complete library and re-exports all
 components from our individual libraries. It's therefore the better choice when
@@ -47,28 +47,32 @@ yarn add @dhis2/ui
 
 The documentation of the UI library can be found here: [https://ui.dhis2.nu](https://ui.dhis2.nu/#/).
 
-This documentation also features an improved version of [live demos](https://ui.dhis2.nu/demo/) that uses Storybook to showcase components. For each component, you will see a number of demos and its different variations and how they interact with props. Make sure to check them out!
+This main documentation incorporates a number of demos, but there are many additional demos available on our [Storybook page](https://ui.dhis2.nu/demo/). For each component, you will see a number of demos and its different variations and how they interact with props. Check these out and don't forget that you can see code implementation details under the JSX tab. 
 
 <a name="intro--workshop-intro" href=""></a>
 ### Workshop tasks introduction
 
-There are three tasks to be completed. The first one is required for the next
-two as it sets up the routing to reach the pages.
+There are three main tasks to be completed. 
 
-All files that contain explanatory comments, even for code
-that's irrelevant to the task or hasn't been covered yet during the workshop.
+The instructions on this page will provide a guide to help you complete the tasks, but you will need to consult our UI documentation and Storybook page to find implementation details.
 
-The comments that are important are the ones containing `@TODO`, that's where
-action is required by you in order to complete the task.
+<a name="workshop-environment" href=""></a>
+## 2. Workshop environment
 
-
-<a name="training-environment" href=""></a>
-## 2. Training environment
+Throughout the academy, you will be working on a sample project. This project contains some sample
 
 Please follow [this step-by-step guide](../resources/GET_STARTED.md#working-on-directories-that-contain-starter-code) on how to setup your local enviornment and start working on this assignment.
 
+
+:::warning[important]
+Make sure that you work on the code in the `workshop` directory.
+Throughout the course, you will be able to check your own work against `solutions`. The solutions are available on separate branches and will be merged in as we move through the course. By keeping your work in the `workshop` directory, you will avoid merge conflicts.
+:::
+
+
+
 <a name="src-structure" href=""></a>
-## 3. Structure inside the `src` folder
+## 3. Structure inside the `workshop/src` folder
 
 ```
 |- /src
@@ -83,8 +87,6 @@ Please follow [this step-by-step guide](../resources/GET_STARTED.md#working-on-d
 |------ Form.js
 |------ Form.module.css
 |------ index.js
-|       # Redirects to the homepage
-|------ NoMatch.js
 |    # Contains the routing
 |--- App.js
 |--- App.module.css
@@ -96,8 +98,7 @@ Please follow [this step-by-step guide](../resources/GET_STARTED.md#working-on-d
 
 The goal of this task is to have a fully functional sidebar.
 The sidebar is required to navigate to the pages you will work on in the next
-two tasks. This shouldn't take more than a couple of minutes as this is more an
-introductory task.
+two tasks.
 
 <a name="task-1--existing-code" href=""></a>
 ### Existing code in the template
@@ -128,7 +129,7 @@ As you can see, there are three menu items. These are already prepared in the
 code of the navigation, but the actual components are missing.
 
 You'll have to import both the `Menu` and the `MenuItem` components from
-`@dhis2/ui`.
+`@dhis2/ui`. Refer to the [documentation](https://ui.dhis2.nu/components/menu) for implementation details.
 
 Then you can replace the placeholder elements (look for the `@TODO` comments)
 with the components you just imported.
@@ -136,6 +137,17 @@ with the components you just imported.
 If all the components have been added correctly, you should be able to navigate
 to the `Home`, `Attributes` and `Form` pages, which so far display nothing but
 an `h1`.
+
+:::tip[solution]
+Have you finished? You can merge in the solution with the following `git merge upstream/day2-task1-solution`
+Now compare your code (`workshop/src/navigation/Navigation.js`) and th solution (`solutions/src/navigation/Navigation.js`).
+:::
+
+:::info[extra task]
+Have you finished early? Take a look at the code in `workshop/src/App.js` and look at the implementation of the routing. We are using [react-router-dom](https://reactrouter.com/en/main). If you are not familiar with react-router-dom, we recommend that you take a look at the documentation. 
+:::
+
+
 
 <a name="task-2" href=""></a>
 ## 5. Task 2 - Create a Table for the attributes that are being loaded
