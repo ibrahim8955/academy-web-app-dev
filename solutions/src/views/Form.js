@@ -3,9 +3,9 @@
  * composeValidators, createEqualTo, email, hasValue
  */
 
-import { ReactFinalForm } from "@dhis2/ui";
-import React from "react";
-import styles from "./Form.module.css";
+import { ReactFinalForm } from '@dhis2/ui'
+import React from 'react'
+import styles from './Form.module.css'
 
 /**
  * This is just a function to demonstrate the values when the form is submitted
@@ -21,30 +21,30 @@ import styles from "./Form.module.css";
  * @param {bool} values.newsletter
  */
 const alertValues = (values) => {
-  const formattedValuesString = JSON.stringify(values, null, 2);
-  alert(formattedValuesString);
-};
+    const formattedValuesString = JSON.stringify(values, null, 2)
+    alert(formattedValuesString)
+}
 
-const { Field, Form: RFForm } = ReactFinalForm;
+const { Field, Form: RFForm } = ReactFinalForm
 
 export const Form = () => (
-  <div>
-    <h1>Form</h1>
+    <div>
+        <h1>Form</h1>
 
-    <RFForm onSubmit={alertValues}>
-      {({ handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
-          <div className={styles.row}>
-            <Field
-              name="surname"
-              label="Surname"
-              component={"input"}
-              className={styles.surname}
-              initialValue={"Traore"}
-            />
-          </div>
-        </form>
-      )}
-    </RFForm>
-  </div>
-);
+        <RFForm onSubmit={alertValues}>
+            {({ handleSubmit }) => (
+                <form onSubmit={handleSubmit}>
+                    <div className={styles.row}>
+                        <Field
+                            name="surname"
+                            label="Surname"
+                            component={'input'}
+                            className={styles.surname}
+                            initialValue={'Traore'}
+                        />
+                    </div>
+                </form>
+            )}
+        </RFForm>
+    </div>
+)

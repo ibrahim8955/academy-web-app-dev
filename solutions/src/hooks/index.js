@@ -1,1 +1,1 @@
-export { useGetAttributes } from "./useGetAttributes.js";
+export { useGetAttributes } from './useGetAttributes.js'
