@@ -64,7 +64,7 @@ The instructions on this page will provide a guide to help you complete the task
 
 ## 2. Workshop environment
 
-Throughout the academy, you will be working on a sample project. This project contains some sample
+Throughout the academy, you will be working on a sample project. This project contains some sample code that you can use as a starting point.
 
 Please follow [this step-by-step guide](../resources/GET_STARTED.md#working-on-directories-that-contain-starter-code) on how to setup your local enviornment and start working on this assignment.
 
@@ -108,6 +108,14 @@ The goal of this task is to have a fully functional sidebar.
 The sidebar is required to navigate to the pages you will work on in the next
 two tasks.
 
+<a name="task-1--expected-result" href=""></a>
+
+### The expected result
+
+Once all steps have been completed, the sidebar should look like this:
+
+![Finished sidebar](../assets/sidebar_finished.jpg)
+
 <a name="task-1--existing-code" href=""></a>
 
 ### Existing code in the template
@@ -121,19 +129,15 @@ The page consists of three pages:
 1. Attributes
 1. Form
 
-The components for these pages can be found in `src/views/`, but they don't need
+The components for these pages can be found in `workshop/src/views/`, but they don't need
 to be touched in order to get this working.
 
-The `src/App.js` renders a component called `Navigation`. It already exists in
-`src/navigation/Navigation.js`. This is the file that you have to work on.
+The `workshop/src/App.js` renders a component called `Navigation`. It already exists in
+`workshop/src/navigation/Navigation.js`. This is the file that you have to work on.
 
 <a name="task-1--completing-the-task" href=""></a>
 
-### Completing the task
-
-Once all steps have been completed, the sidebar should look like this:
-
-![Finished sidebar](../assets/sidebar_finished.jpg)
+### Tips for completing the task
 
 As you can see, there are three menu items. These are already prepared in the
 code of the navigation, but the actual components are missing.
@@ -167,11 +171,19 @@ This attribute information should be formatted in a table.
 
 If you did not complete the first task, make sure you copy/paste the solution into your code so that you can navigate to the attributes page. Note that you can also add `#/attributes` to the app url to navigate directly to the attributes page.
 
+<a name="task-2--expected-result" href=""></a>
+
+### The expected result
+
+Once all steps have been completed, the attributes page should look like this:
+
+![Finished attributes page](../assets/finished_attributes_page.jpg)
+
 <a name="task-2--existing-code" href=""></a>
 
 ### Existing code in the template
 
-The file you are going to work on is `src/views/Attributes.js`. This code uses a dummy hook that simulates the data fetching from DHIS2.
+The file you are going to work on is `workshop/src/views/Attributes.js`. This code uses a dummy hook that simulates the data fetching from DHIS2.
 
 We will talk about how to load data from DHIS2 tomorrow,so for now, don't worry about the implementation.
 There are three values (`loading`, `error` & `data`) and the `data` one is the
@@ -195,11 +207,7 @@ The data will have the following shape:
 
 <a name="task-2--completing-the-task" href=""></a>
 
-### Completing the task
-
-Once all steps have been completed, the attributes page should look like this:
-
-![Finished attributes page](../assets/finished_attributes_page.jpg)
+### Tips for completing the task
 
 We are going to use the Table components. Check out the [documentation](https://ui.dhis2.nu/components/data-table) and the [Storybook demos](https://ui.dhis2.nu/demo/?path=/story/table--static-layout). Note that there are both `<DataTable>` and `<Table>` components; in this exercise, it is recommended that you use `<Table>`.
 
@@ -212,13 +220,13 @@ table row that displays the relevant data. It is probably easier, however, to st
 
 ### Handling loading state
 
-When fetching data, you will generally need to wait for data to be returned from the server. During this time in `loading` state, you will want to provide an indication to users that something is happening, for instance by displaying a loader. Take a look at the components listed in the UI documentation and see if you can find one that you can use to indicate loading state. Modify the code in `src/views/Attributes.js` to display the loader when in loading state. Try to center the loader on the page (hint: you can use the component `<CenteredContent>` from dhis2-ui library, or you can use css).
+When fetching data, you will generally need to wait for data to be returned from the server. During this time in `loading` state, you will want to provide an indication to users that something is happening, for instance by displaying a loader. Take a look at the components listed in the UI documentation and see if you can find one that you can use to indicate loading state. Modify the code in `workshop/src/views/Attributes.js` to display the loader when in loading state. Try to center the loader on the page (hint: you can use the component `<CenteredContent>` from dhis2-ui library, or you can use css).
 
 ### Handling errors
 
 Unfortunately, sometimes things go wrong when fetching data. This can happen for instance when the server time outs or when the user tries to access a resource that does not exist. Throughout DHIS2, we use notice boxes to display important notices to users. Look at the UI documentation and read up on the NoticeBox component. Modify the code, to show an Notice Box if there's an error returned from the data retrieval hook.
 
-Note: with the template code, you will never actually be in an error state! To simulate an error, see if you can modify the hook provided in `src/hooks/useGetAttributes.js`. Hint: you do not want to throw an error from the hook, but rather want the error value returned from the hook _be_ an error, rather than `null`.
+Note: with the template code, you will never actually be in an error state! To simulate an error, see if you can modify the hook provided in `workshop/src/hooks/useGetAttributes.js`. Hint: you do not want to throw an error from the hook, but rather want the error value returned from the hook _be_ an error, rather than `null`.
 
 <a name="task-3" href=""></a>
 
@@ -230,9 +238,9 @@ required fields have a value and their value is not invalid.
 
 If you did not complete the first task, make sure you have copy/pasted the solution into your code so that you can navigate to the form page. Note that you can also add `#/form` to the app url to navigate directly to the form page.
 
-<a name="task-3--completing-the-task" href=""></a>
+<a name="task-3--expected-result" href=""></a>
 
-### The task
+### The expected result
 
 We will create a form that can be used to collect user details that could be submitted (for example for registering a new user)
 
@@ -262,7 +270,7 @@ function are invalid:
 
 ### Code to use
 
-The file that you will have to work on is `src/views/Form.js`.
+The file that you will have to work on is `workshop/src/views/Form.js`.
 
 #### React Final Form Field
 
@@ -325,7 +333,7 @@ The validation for the individual fields should be as follows:
 1. `email`
    - Cannot be empty
    - Must be a valid e-mail address
-1. `email-validation`
+1. `confirm_email`
    - Cannot be empty
    - Must match the value of the `email` field
 
