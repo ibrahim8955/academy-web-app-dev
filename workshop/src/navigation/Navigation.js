@@ -10,13 +10,14 @@ const NavigationItem = ({ path, label }) => {
     // "null" when not active, "object" when active
     const routeMatch = useMatch(path)
     // path is matched if routeMatch is not null
-    //   eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars
     const isActive = Boolean(routeMatch)
 
+    // eslint-disable-next-line no-unused-vars
     const onClick = () => navigate(path)
 
-    // @TODO: Use the `MenuItem` component insteaf of the `span`
-    return <div onClick={onClick}>{label}</div>
+    // @TODO: Use the `MenuItem` component instead of the `div`
+    return <div>{label}</div>
 }
 
 NavigationItem.propTypes = {
