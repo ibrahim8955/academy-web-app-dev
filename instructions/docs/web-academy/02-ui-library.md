@@ -396,7 +396,9 @@ Part of making reusable DHIS2 apps means making apps that work in multiple langu
 Wrap strings in the app in i18n (start in workshop/src/views/Home.js ).
 :::
 
-When you have wrapped the strings, stop and rerun the app to generate translation strings. You can then create a new translation file (e.g. copy the en.pot and rename it as fr.po) and add some test translations.
+Refer to the [documentation for setting up translations](https://developers.dhis2.org/docs/guides/translation-support/) in your app.
+
+When you have wrapped the strings, generate the translation strings. You can then create a new translation file (e.g. copy the en.pot and rename it as fr.po) and add some test translations. Try the translations out by logging in with a new user and changing their locale language (click on the avatar in the upper-right of the header bar)
 
 ### Task 4.2 Support RTL Languages
 
@@ -407,3 +409,9 @@ Enable your app to work with RTL languages.
 DHIS2 UI components are designed to work with languages written in right-to-left script. By default, when you build an app using the DHIS2 app-platform, it will be assumed to be LTR. You can
 
 In `workshop/d2.config.js`, set `direction: 'auto'`. Change the user language to Arabic and see if the direction reverses. Note: you may need to update some of the css files to make the layout work correctly. [This article](https://css-tricks.com/css-logical-properties-and-values/) provides a good overview of CSS logical properties.
+
+### Solutions
+
+:::note[Solution]
+Look at the [code here](https://github.com/dhis2/academy-web-app-dev/tree/day2-task4-solution/solutions). Look particularly at src/App.js, src/views/Home.js, the i18n directory, and d2.config.js.
+:::
