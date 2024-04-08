@@ -4,14 +4,13 @@ sidebar_position: 30
 ---
 
 :::tip[What you will learn]
-
 - [ ] An overview of the DHIS2 UI Component library
 - [ ] How to access and effectively use documentation for the DHIS2 UI library
 - [ ] Menu / MenuItem components and approaches for creating menus and navigation in DHIS2
 - [ ] Table components and how to format large quantities of data
 - [ ] Form logic in DHIS2, including how to use validators from DHIS2 UI library
-- [ ] How to make your app be adaptable for use in multiple languages.
-      :::
+- [ ] How to make your app be adaptable for use in multiple languages.      
+:::
 
 ## Introduction
 
@@ -155,6 +154,12 @@ an `h1`.
 Have you finished early? Take a look at the code in `workshop/src/App.js` and look at the implementation of the routing. We are using [react-router-dom](https://reactrouter.com/en/main). If you are not familiar with react-router-dom, we recommend that you take a look at the documentation.
 :::
 
+### Solutions
+
+:::note[Solution]
+Look at the [Navigation.js file here](https://github.com/dhis2/academy-web-app-dev/blob/day2-task1-solution/solutions/src/navigation/Navigation.js) for an example of how to solve this.
+:::
+
 <a name="task-2" href=""></a>
 
 ## Task 2 - Tables and displaying data
@@ -201,7 +206,7 @@ The data will have the following shape:
 
 <a name="task-2--completing-the-task" href=""></a>
 
-### Task 2.1
+### Task 2.1 Table for data
 
 :::info[Requirement]
 Use DHIS2 UI Components for Table to implement a table displaying attributes returned from the system (in `workshop/src/views/Attributes.js`)
@@ -233,6 +238,12 @@ Use a NoticeBox from DHIS2 UI Component library that displays when data retrieva
 Unfortunately, sometimes things go wrong when fetching data. This can happen for instance when the server time outs or when the user tries to access a resource that does not exist. Throughout DHIS2, we use notice boxes to display important notices to users. Look at the UI documentation and read up on the NoticeBox component. Modify the code, to show an Notice Box if there's an error returned from the data retrieval hook.
 
 Note: with the template code, you will never actually be in an error state! To simulate an error, see if you can modify the hook provided in `workshop/src/hooks/useGetAttributes.js`. Hint: you do not want to throw an error from the hook, but rather want the error value returned from the hook _be_ an error, rather than `null`.
+
+### Solutions
+
+:::note[Solution]
+Look at the [Attributes.js file here](https://github.com/dhis2/academy-web-app-dev/blob/day2-task2-solution/solutions/src/views/Attributes.js) for an example of how to solve this.
+:::
 
 <a name="task-3" href=""></a>
 
@@ -369,6 +380,12 @@ for more information.
 Have you finished early? Look at the implementation of the form logic in dev tools as you interact with the form. Is the form efficient? What are some disadvantages of the current implementation? Think of ways you might improve the implementation.
 :::
 
+### Solutions
+
+:::note[Solution]
+Look at the [Form.js file here](https://github.com/dhis2/academy-web-app-dev/blob/day2-task3-solution/solutions/src/views/Form.js) for an example of how to solve this.
+:::
+
 ## Task 4 - Internationalization
 
 Part of making reusable DHIS2 apps means making apps that work in multiple languages and in multiple settings.
@@ -379,7 +396,9 @@ Part of making reusable DHIS2 apps means making apps that work in multiple langu
 Wrap strings in the app in i18n (start in workshop/src/views/Home.js ).
 :::
 
-When you have wrapped the strings, stop and rerun the app to generate translation strings. You can then create a new translation file (e.g. copy the en.pot and rename it as fr.po) and add some test translations.
+Refer to the [documentation for setting up translations](https://developers.dhis2.org/docs/guides/translation-support/) in your app.
+
+When you have wrapped the strings, generate the translation strings. You can then create a new translation file (e.g. copy the en.pot and rename it as fr.po) and add some test translations. Try the translations out by logging in with a new user and changing their locale language (click on the avatar in the upper-right of the header bar)
 
 ### Task 4.2 Support RTL Languages
 
@@ -390,3 +409,9 @@ Enable your app to work with RTL languages.
 DHIS2 UI components are designed to work with languages written in right-to-left script. By default, when you build an app using the DHIS2 app-platform, it will be assumed to be LTR. You can
 
 In `workshop/d2.config.js`, set `direction: 'auto'`. Change the user language to Arabic and see if the direction reverses. Note: you may need to update some of the css files to make the layout work correctly. [This article](https://css-tricks.com/css-logical-properties-and-values/) provides a good overview of CSS logical properties.
+
+### Solutions
+
+:::note[Solution]
+Look at the [code here](https://github.com/dhis2/academy-web-app-dev/tree/day2-task4-solution/solutions). Look particularly at src/App.js, src/views/Home.js, the i18n directory, and d2.config.js.
+:::
