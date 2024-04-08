@@ -4,14 +4,13 @@ sidebar_position: 30
 ---
 
 :::tip[What you will learn]
-
 - [ ] An overview of the DHIS2 UI Component library
 - [ ] How to access and effectively use documentation for the DHIS2 UI library
 - [ ] Menu / MenuItem components and approaches for creating menus and navigation in DHIS2
 - [ ] Table components and how to format large quantities of data
 - [ ] Form logic in DHIS2, including how to use validators from DHIS2 UI library
-- [ ] How to make your app be adaptable for use in multiple languages.
-      :::
+- [ ] How to make your app be adaptable for use in multiple languages.      
+:::
 
 ## Introduction
 
@@ -155,6 +154,12 @@ an `h1`.
 Have you finished early? Take a look at the code in `workshop/src/App.js` and look at the implementation of the routing. We are using [react-router-dom](https://reactrouter.com/en/main). If you are not familiar with react-router-dom, we recommend that you take a look at the documentation.
 :::
 
+### Solutions
+
+:::note[Solution]
+Look at the [Navigation.js file here](https://github.com/dhis2/academy-web-app-dev/blob/day2-task1-solution/solutions/src/navigation/Navigation.js) for an example of how to solve this.
+:::
+
 <a name="task-2" href=""></a>
 
 ## Task 2 - Tables and displaying data
@@ -201,7 +206,7 @@ The data will have the following shape:
 
 <a name="task-2--completing-the-task" href=""></a>
 
-### Task 2.1
+### Task 2.1 Table for data
 
 :::info[Requirement]
 Use DHIS2 UI Components for Table to implement a table displaying attributes returned from the system (in `workshop/src/views/Attributes.js`)
@@ -233,6 +238,12 @@ Use a NoticeBox from DHIS2 UI Component library that displays when data retrieva
 Unfortunately, sometimes things go wrong when fetching data. This can happen for instance when the server time outs or when the user tries to access a resource that does not exist. Throughout DHIS2, we use notice boxes to display important notices to users. Look at the UI documentation and read up on the NoticeBox component. Modify the code, to show an Notice Box if there's an error returned from the data retrieval hook.
 
 Note: with the template code, you will never actually be in an error state! To simulate an error, see if you can modify the hook provided in `workshop/src/hooks/useGetAttributes.js`. Hint: you do not want to throw an error from the hook, but rather want the error value returned from the hook _be_ an error, rather than `null`.
+
+### Solutions
+
+:::note[Solution]
+Look at the [Attributes.js file here](https://github.com/dhis2/academy-web-app-dev/blob/day2-task2-solution/solutions/src/views/Attributes.js) for an example of how to solve this.
+:::
 
 <a name="task-3" href=""></a>
 
@@ -367,6 +378,12 @@ for more information.
 
 :::note[reflection]
 Have you finished early? Look at the implementation of the form logic in dev tools as you interact with the form. Is the form efficient? What are some disadvantages of the current implementation? Think of ways you might improve the implementation.
+:::
+
+### Solutions
+
+:::note[Solution]
+Look at the [Form.js file here](https://github.com/dhis2/academy-web-app-dev/blob/day2-task3-solution/solutions/src/views/Form.js) for an example of how to solve this.
 :::
 
 ## Task 4 - Internationalization
