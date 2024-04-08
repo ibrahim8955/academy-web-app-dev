@@ -3,18 +3,19 @@ title: Day 2 | UI library
 sidebar_position: 30
 ---
 
-:::danger[work in progress]
-Owned and will be updated by **Tom**
+:::tip[What you will learn]
 
-- people will start from scratch
-- day 3 (appruntime) will build on top of this
+- [ ] An overview of the DHIS2 UI Component library
+- [ ] How to access and effectively use documentation for the DHIS2 UI library
+- [ ] Menu / MenuItem components and approaches for creating menus and navigation in DHIS2
+- [ ] Table components and how to format large quantities of data
+- [ ] Form logic in DHIS2, including how to use validators from DHIS2 UI library
+- [ ] How to make your app be adaptable for use in multiple languages.
+      :::
 
-Content here is draft copy from 2022 workshop: https://github.com/dhis2/academy-web-app-dev-2022/tree/main/workshop/02-ui-library
-:::
+## Introduction
 
-## 1. Introduction
-
-### UI Library recap
+### UI Library
 
 As we learned yesterday, at DHIS2 we have a design system which is a collection of design principles and
 a library of UI components for designing applications for the DHIS2 platform.
@@ -32,13 +33,7 @@ independent of structural changes in our individual libraries.
 
 #### Installation
 
-It can be added to a project with both npm and yarn:
-
-**npm:**
-
-```bash
-npm install @dhis2/ui --save-prod
-```
+It can be added to a project with both yarn (recommended) or npm:
 
 **yarn:**
 
@@ -54,7 +49,7 @@ This main documentation incorporates a number of demos, but there are many addit
 
 <a name="intro--workshop-intro" href=""></a>
 
-### Workshop tasks introduction
+## Workshop tasks introduction
 
 There are three main tasks to be completed.
 
@@ -62,7 +57,7 @@ The instructions on this page will provide a guide to help you complete the task
 
 <a name="workshop-environment" href=""></a>
 
-## 2. Workshop environment
+### Workshop environment
 
 Throughout the academy, you will be working on a sample project. This project contains some sample code that you can use as a starting point.
 
@@ -70,12 +65,12 @@ Please follow [this step-by-step guide](../resources/GET_STARTED.md#working-on-d
 
 :::warning[important]
 Make sure that you work on the code in the `workshop` directory.
-Throughout the course, you will be able to check your own work against `solutions`. The solutions are available on separate branches and will be merged in as we move through the course. By keeping your work in the `workshop` directory, you will avoid merge conflicts.
+Throughout the course, you will be able to check your own work against solutions. The solutions are available on separate branches in a solutions directory. Excercises include links to the specific resources to look at.  
 :::
 
 <a name="src-structure" href=""></a>
 
-## 3. Structure inside the `workshop/src` folder
+### Structure inside the `workshop/src` folder
 
 ```
 |- /src
@@ -102,11 +97,15 @@ Throughout the course, you will be able to check your own work against `solution
 
 <a name="task-1" href=""></a>
 
-## 4. Task 1 - Create a navigation with the Menu and MenuItem component
+## Task 1 - Navigation
 
-The goal of this task is to have a fully functional sidebar.
-The sidebar is required to navigate to the pages you will work on in the next
-two tasks.
+### Task 1.1 - Navigation with the Menu and MenuItem component
+
+:::info[Requirement]
+Use DHIS2 UI Components Menu/MenuItem to implement sidebar navigation (in `workshop/src/navigation/Navigation.js`)
+:::
+
+The sidebar is required to navigate to the pages you will work on in the next two tasks.
 
 <a name="task-1--expected-result" href=""></a>
 
@@ -152,18 +151,13 @@ If all the components have been added correctly, you should be able to navigate
 to the `Home`, `Attributes` and `Form` pages, which so far display nothing but
 an `h1`.
 
-:::tip[solution]
-Have you finished? You can merge in the solution with the following `git merge upstream/day2-task1-solution`
-Now compare your code (`workshop/src/navigation/Navigation.js`) and th solution (`solutions/src/navigation/Navigation.js`).
-:::
-
-:::info[extra task]
+:::note[reflection]
 Have you finished early? Take a look at the code in `workshop/src/App.js` and look at the implementation of the routing. We are using [react-router-dom](https://reactrouter.com/en/main). If you are not familiar with react-router-dom, we recommend that you take a look at the documentation.
 :::
 
 <a name="task-2" href=""></a>
 
-## 5. Task 2 - Create a Table for the attributes that are being loaded
+## Task 2 - Tables and displaying data
 
 After the sidebar has been added, you can navigate to the attributes page.
 On this page some attributes information from the database is displayed.
@@ -207,7 +201,11 @@ The data will have the following shape:
 
 <a name="task-2--completing-the-task" href=""></a>
 
-### Tips for completing the task
+### Task 2.1
+
+:::info[Requirement]
+Use DHIS2 UI Components for Table to implement a table displaying attributes returned from the system (in `workshop/src/views/Attributes.js`)
+:::
 
 We are going to use the Table components. Check out the [documentation](https://ui.dhis2.nu/components/data-table) and the [Storybook demos](https://ui.dhis2.nu/demo/?path=/story/table--static-layout). Note that there are both `<DataTable>` and `<Table>` components; in this exercise, it is recommended that you use `<Table>`.
 
@@ -218,11 +216,19 @@ unique or not ( `unique`).
 Remember that `data.attributes.attributes` is an array, you'll have to map each item to a
 table row that displays the relevant data. It is probably easier, however, to start by making a table with a single row (by taking the first attribute from `data.attributes.attributes`). Then you can expand the logic to display all the attributes.
 
-### Handling loading state
+### Task 2.2 Handle loading state
+
+:::info[Requirement]
+Use a loader component from DHIS2 UI Component library that displays when data retrieval is in `loading` state
+:::
 
 When fetching data, you will generally need to wait for data to be returned from the server. During this time in `loading` state, you will want to provide an indication to users that something is happening, for instance by displaying a loader. Take a look at the components listed in the UI documentation and see if you can find one that you can use to indicate loading state. Modify the code in `workshop/src/views/Attributes.js` to display the loader when in loading state. Try to center the loader on the page (hint: you can use the component `<CenteredContent>` from dhis2-ui library, or you can use css).
 
-### Handling errors
+### Task 2.3 Handle errors
+
+:::info[Requirement]
+Use a NoticeBox from DHIS2 UI Component library that displays when data retrieval fails
+:::
 
 Unfortunately, sometimes things go wrong when fetching data. This can happen for instance when the server time outs or when the user tries to access a resource that does not exist. Throughout DHIS2, we use notice boxes to display important notices to users. Look at the UI documentation and read up on the NoticeBox component. Modify the code, to show an Notice Box if there's an error returned from the data retrieval hook.
 
@@ -230,7 +236,7 @@ Note: with the template code, you will never actually be in an error state! To s
 
 <a name="task-3" href=""></a>
 
-## 6. Task 3 - Complete the registration form
+## Task 3 - Forms
 
 The final task will be the one that will take most of the time.
 The goal is to have a fully functional form that won't submit until all
@@ -268,11 +274,11 @@ function are invalid:
 
 <a name="task-3--code-to-use" href=""></a>
 
-### Code to use
+### Task 3.1 React Final Form + DHIS2 UI Components
 
-The file that you will have to work on is `workshop/src/views/Form.js`.
-
-#### React Final Form Field
+:::info[Requirement]
+Using React Final Form `Field` component and the DHIS2 form components to implement the registration form (work in `workshop/src/views/Form.js`)
+:::
 
 The DHIS2 UI Library provides a number of tools to implement form logic with [react-final-form](https://final-form.org/react), which we use for building forms. There are other popular form libraries for React (for example, [Formik](https://formik.org/) or [React Hook Form](https://react-hook-form.com/)).
 
@@ -314,7 +320,11 @@ For components, the DHIS2 UI library provides a number of Field inputs that are 
 
 If you need to look at documentation for these components, you can generally refer to the non Final Form field of the documentation (e.g. for [InputField](https://ui.dhis2.nu/components/inputfield), [SingleSelectField](https://ui.dhis2.nu/components/select), and [SwitchField](https://ui.dhis2.nu/components/switch)).
 
-#### DHIS2 Validators
+### Task 3.2 Add validation logic to form
+
+:::info[Requirement]
+Use validators from DHIS2 UI library to implement form validation
+:::
 
 The DHIS2 UI library exposes a number of validators that can be used to check that the value of the field is valid. The [documentation](https://ui.dhis2.nu/utilities/forms/validators) has details on the specific validators.
 
@@ -354,3 +364,29 @@ All validators mentioned above in this task are exported directly from
 refer to the docs of
 [`react-final-form`](https://final-form.org/docs/react-final-form/getting-started)
 for more information.
+
+:::note[reflection]
+Have you finished early? Look at the implementation of the form logic in dev tools as you interact with the form. Is the form efficient? What are some disadvantages of the current implementation? Think of ways you might improve the implementation.
+:::
+
+## Task 4 - Internationalization
+
+Part of making reusable DHIS2 apps means making apps that work in multiple languages and in multiple settings.
+
+### Task 4.1 Add translation strings
+
+:::info[Requirement]
+Wrap strings in the app in i18n (start in workshop/src/views/Home.js ).
+:::
+
+When you have wrapped the strings, stop and rerun the app to generate translation strings. You can then create a new translation file (e.g. copy the en.pot and rename it as fr.po) and add some test translations.
+
+### Task 4.2 Support RTL Languages
+
+:::info[Requirement]
+Enable your app to work with RTL languages.
+:::
+
+DHIS2 UI components are designed to work with languages written in right-to-left script. By default, when you build an app using the DHIS2 app-platform, it will be assumed to be LTR. You can
+
+In `workshop/d2.config.js`, set `direction: 'auto'`. Change the user language to Arabic and see if the direction reverses. Note: you may need to update some of the css files to make the layout work correctly. [This article](https://css-tricks.com/css-logical-properties-and-values/) provides a good overview of CSS logical properties.
