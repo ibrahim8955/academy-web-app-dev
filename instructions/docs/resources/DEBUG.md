@@ -1,4 +1,5 @@
 ---
+title: Debugging
 sidebar_position: 10
 ---
 

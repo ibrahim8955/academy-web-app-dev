@@ -38,7 +38,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Check out the resources, and make sure to join our Slack where all the
+        Check out the resources, and make sure to join our <a href='https://dhis2-dev-community.slack.com/'>Slack</a> where all the
         conversations will happen during the academy.
       </>
     ),
