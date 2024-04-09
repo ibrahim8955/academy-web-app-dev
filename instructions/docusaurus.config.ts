@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'DHIS2 Web Academy',
-  tagline: 'Web Academy 2024 - Abidjan, Ivory Coast',
+  title: 'DHIS2 Web App Academy',
+  tagline: 'Web App Academy 2024 - Abidjan, Ivory Coast',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -58,7 +58,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/dhis2-logo-rgb-positive-600.png',
     navbar: {
-      title: 'DHIS2 Web Academy',
+      title: 'DHIS2 Web App Academy',
       logo: {
         alt: "DHIS2 Logo",
         src: "img/dhis2-logo.svg",
@@ -69,11 +69,6 @@ const config: Config = {
           sidebarId: 'beforeAcademySidebar',
           position: 'left',
           label: 'Before the Academy',
-        },{
-          type: 'docSidebar',
-          sidebarId: 'agenda',
-          position: 'left',
-          label: '📅 Agenda',
         },
         {
           type: 'docSidebar',
@@ -126,7 +121,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} DHIS2, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} DHIS2. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

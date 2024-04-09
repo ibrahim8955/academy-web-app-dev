@@ -3,9 +3,9 @@ title: Prerequisites
 sidebar_position: 5
 ---
 
-# DHIS2 App Development Academy Pre-Requisites
+# DHIS2 Web App Academy Pre-Requisites
 
-Developers should be comfortable working with the following technologies before beginning the DHIS2 App Development Academy
+Developers should be comfortable working with the following technologies before beginning the DHIS2 Web App Academy
 
 - [HTML](https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/) & [CSS](https://www.freecodecamp.org/learn/responsive-web-design/basic-css/)
 - [JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/)
