@@ -12,7 +12,7 @@ sidebar_position: 30
 - [ ] How to make your app be adaptable for use in multiple languages.      
 :::
 
-## Day 2 (Tuesday)
+## Agenda
 | Time | Topic | |
 | --- | --- | --- |
 | 09:00 - 10:30 | Opening Workshop | UI Fundamentals: Intro & Task 1 (Menu) |
@@ -73,7 +73,7 @@ The instructions on this page will provide a guide to help you complete the task
 
 Throughout the academy, you will be working on a sample project. This project contains some sample code that you can use as a starting point.
 
-Please follow [this step-by-step guide](../resources/GET_STARTED.md#working-on-directories-that-contain-starter-code) on how to setup your local environment and start working on this assignment.
+Please follow [this step-by-step guide](../resources/set_up_fork.md#working-on-directories-that-contain-starter-code) on how to setup your local environment and start working on this assignment.
 
 :::warning[important]
 Make sure that you work on the code in the `workshop` directory.

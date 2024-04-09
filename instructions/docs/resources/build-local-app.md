@@ -83,5 +83,5 @@ yarn format
 ```
 ## Start your DHIS2 application locally
 
-Please follow [these steps](../resources/GET_STARTED.md#start-your-dhis2-application-locally) to start your application on your browser.
+Please follow [these steps](../resources/set_up_fork.md#start-your-dhis2-application-locally) to start your application on your browser.
 
