@@ -1,9 +1,9 @@
 ---
-title: Get Started
-sidebar_position: 20
+title: Setting up your fork
+sidebar_position: 25
 ---
 
-# Get Started
+# Setting up your fork 🍴 
 
 We will be working on individual forks of the same repository.
 

@@ -3,7 +3,7 @@ title: Building a local app
 sidebar_position: 30
 ---
 
-# Initial Environment Setup
+# Building a local app
 
 Make sure that you have set up your environment with the environment setup instructions from the before academy section.
 

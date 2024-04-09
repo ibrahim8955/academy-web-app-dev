@@ -1,9 +1,7 @@
 ---
-title: Resources
+title: Useful Links
 sidebar_position: 1
 ---
-
-## Useful Links
 
 - **Web & Android App Development Webinar - April 21, 2022**
 

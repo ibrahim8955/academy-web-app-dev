@@ -83,14 +83,29 @@ const config: Config = {
           items: [
             {
               type: 'doc',
-              docId: 'resources/resources',
-              label: 'Resources',
+              docId: 'resources/links',
+              label: 'Useful links',
             },
             {
               type: 'doc',
               docId: 'resources/DEBUG',
               label: 'Debugging',
+            },            
+            {
+              type: 'doc',
+              docId: 'resources/api-overview',
+              label: 'API Overview',
             },
+            {
+              type: 'doc',
+              docId: 'resources/set_up_fork',
+              label: 'Set up your fork',
+            },
+            {
+              type: 'doc',
+              docId: 'resources/build-local-app',
+              label: 'Build local app',
+            },            
           ],
         },
         {
@@ -107,10 +122,6 @@ const config: Config = {
           title: 'Useful links',
           items: [
             {
-              label: 'Resources',
-              to: 'docs/resources/',
-            },
-            {
               label: 'Slack',
               href: 'https://dhis2-dev-community.slack.com',
             },
@@ -118,6 +129,10 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/dhis2/academy-web-app-dev',
             },
+            {
+              label: 'More links',
+              to: 'docs/resources/links',
+            },            
           ],
         },
       ],
