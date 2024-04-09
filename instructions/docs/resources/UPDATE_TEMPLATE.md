@@ -1,6 +1,6 @@
 ---
 title: (?obsolete) Updating template
-sidebar_position: 30
+sidebar_position: 35
 ---
 
 :::danger[ToDo]
