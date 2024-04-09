@@ -20,7 +20,7 @@ sidebar_position: 30
 | 11:00 - 12:30 | Workshop | UI Fundamentals: Task 2 (Table component) |
 | 12:30 - 13:30 | _lunch break_ | |
 | 13:30 - 15:00 | Workshop | UI Fundamentals: Task 3 (Forms) |
-| 15:00 - 15:30 | _cofFee break_ | |
+| 15:00 - 15:30 | _coffee break_ | |
 | 15:30 - 16:30 | Workshop | UI Fundamentals: Task 4 (or API overview?) |
 | 16:30 - 16:45 | Closing | |
 | 16:45 - 17:00 | Q&A (with French support) | |
@@ -289,6 +289,7 @@ The specific values that we are collecting in the field are:
 | password      | Input field expecting a string                                       | Cannot be empty, Must be a valid DHIS2 password            |
 | email         | Input field expecting a string                                       | Cannot be empty, Must be a valid e-mail address            |
 | confirm_email | Input field expecting a string                                       | Cannot be empty, Must match the value of the `email` field |
+| newsletter | Switch that takes a boolean value (`true` or `false`) | No validation |
 
 If the form validation fails, then the form should contains the respective
 error message. In the following image all fields that have a validation
@@ -331,7 +332,7 @@ The `<Field>` component above has all of the properties that we will be working 
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name         | The value for this field will have the associated `name`. E.g. if `name: fruit`, then in the `values` object, the value for the field will be at `values.fruit` |
 | label        | The label that will be displayed in the UI for the field                                                                                                        |
-| type         | if you need to hide the text while typing, you can set `type="password`, otherwise `type` can be left as null                                                   |
+| type         | if you need to hide the text while typing, you can set `type="password`. For checkbox-like inputs, the value should be `type="checkbox"` otherwise `type` can be left as null                                                   |
 | component    | Here you can specify the component you want to use to select the value for the Field                                                                            |
 | className    | For styling                                                                                                                                                     |
 | initialValue | Provides an initial value for the field                                                                                                                         |
@@ -354,6 +355,8 @@ The DHIS2 UI library exposes a number of validators that can be used to check th
 
 The validation for the individual fields should be as follows:
 
+1. `title`
+   - no validation required for this task
 1. `surname`
    - Cannot be empty
 1. `firstname`
@@ -370,6 +373,8 @@ The validation for the individual fields should be as follows:
 1. `confirm_email`
    - Cannot be empty
    - Must match the value of the `email` field
+1. `newsletter`
+   - no validation required for this task 
 
 The first thing you should try to do is identify the appropriate validators to use by reading through the documentation for validators.
 
@@ -403,6 +408,11 @@ Look at the [Form.js file here](https://github.com/dhis2/academy-web-app-dev/blo
 
 Part of making reusable DHIS2 apps means making apps that work in multiple languages and in multiple settings.
 
+### Presentation - introducion to generalizable apps
+
+We will go through this [presentation](https://docs.google.com/presentation/d/1t0J67xAbcPJigkKV5HGUqZsgLPH97EuyhMKRT5IVSyo).
+
+
 ### Task 4.1 Add translation strings
 
 :::info[Requirement]
@@ -411,7 +421,7 @@ Wrap strings in the app in i18n (start in workshop/src/views/Home.js ).
 
 Refer to the [documentation for setting up translations](https://developers.dhis2.org/docs/guides/translation-support/) in your app.
 
-When you have wrapped the strings, generate the translation strings. You can then create a new translation file (e.g. copy the en.pot and rename it as fr.po) and add some test translations. Try the translations out by logging in with a new user and changing their locale language (click on the avatar in the upper-right of the header bar)
+When you have wrapped the strings, generate the translation strings. You can then create a new translation file (e.g. copy the en.pot and rename it as fr.po) and add some test translations (they do not have to be real translations!). Try the translations out by opening your app and your backend instance in a new private window; log in with the following user who has the user language set to French: `user: frenchS; password: ???`.
 
 ### Task 4.2 Support RTL Languages
 
@@ -421,7 +431,9 @@ Enable your app to work with RTL languages.
 
 DHIS2 UI components are designed to work with languages written in right-to-left script. By default, when you build an app using the DHIS2 app-platform, it will be assumed to be LTR. You can
 
-In `workshop/d2.config.js`, set `direction: 'auto'`. Change the user language to Arabic and see if the direction reverses. Note: you may need to update some of the css files to make the layout work correctly. [This article](https://css-tricks.com/css-logical-properties-and-values/) provides a good overview of CSS logical properties.
+In `workshop/d2.config.js`, set `direction: 'auto'`. Test this out by opening a new private window, opening and logging into the backend instance and running your app. log in with the following user who has the user language set to Arabic: `user: arabicS; password: ???`. 
+
+Note: you may need to update some of the css files to make the layout work correctly. [This article](https://css-tricks.com/css-logical-properties-and-values/) provides a good overview of CSS logical properties.
 
 ### Solutions
 
