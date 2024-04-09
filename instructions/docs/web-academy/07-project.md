@@ -32,7 +32,7 @@ You are free to choose the purpose of your application in this project. We only 
 
 ## Requirements
 
-- **Must** be [initiatialized with the DHIS2 Application Platform](../resources/GET_STARTED.md)
+- **Must** be [initiatialized with the DHIS2 Application Platform](../resources/set_up_fork.md)
 - **Must** use a layout with sidebar navigation. See [example](./02-ui-library.md) from the UI-library exercise.
 - **Must** use [React Router](https://reactrouter.com/web/guides/quick-start) for routing and contain at least two unique routes with route relevant components and data
 - [`@dhis2/ui`](https://ui.dhis2.nu/demo/) components **must**
@@ -44,7 +44,7 @@ You are free to choose the purpose of your application in this project. We only 
 ## Submission details
 
 1. Join GitHub Classroom through this [link](https://classroom.github.com/a/EQw8Kv6H).
-2. Follow these [instructions](../resources/GET_STARTED.md) on how to get started with Github Classroom
+2. Follow these [instructions](../resources/set_up_fork.md) on how to get started with Github Classroom
 3. Feel free to create your application in this directory `project`
 4. Submit your project to Github Classroom
 

@@ -1,6 +1,6 @@
 # Task Instructions
 
-When you're done with the tasks below, please follow these [instructions](../../../resources/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.
+When you're done with the tasks below, please follow these [instructions](../../../resources/set_up_fork.md#how-to-submit-assignments) for submitting your assignment.
 
 ## TASK 1 - Using Dynamic queries and variables
 

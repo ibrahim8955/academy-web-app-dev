@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'The Agenda',
-    link: 'docs/web-academy/agenda',
+    link: 'docs/web-academy/introductions',
     Svg: require('@site/static/img/flag_cote_ivoire.svg').default,
     description: (
       <>

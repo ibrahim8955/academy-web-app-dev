@@ -33,7 +33,7 @@ Some handy links:
 
 # Data Store Task Instructions
 
-After you've completed the tasks below, please follow these [instructions](../resources/GET_STARTED.md#how-to-submit-assignments) for submitting your assignment.
+After you've completed the tasks below, please follow these [instructions](../resources/set_up_fork.md#how-to-submit-assignments) for submitting your assignment.
 
 ## TASK 1 - Initialize the DataStoreProvider
 
