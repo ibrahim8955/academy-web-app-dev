@@ -9,7 +9,7 @@ Owned and will be updated by **Sakibou**
 Content here is draft copy from 2022 workshop: https://github.com/dhis2/academy-web-app-dev-2022/tree/main/workshop/06-generic-dhis2-apps
 :::
 
-## Day 4 (Thursday)
+## Agenda
 | Time | Topic | |
 | --- | --- | --- |
 | 09:00 - 10:30 | Opening Workshop | Data Store |

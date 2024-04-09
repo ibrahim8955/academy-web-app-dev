@@ -72,7 +72,7 @@ You are now ready to start your application locally!
 Run `yarn start` - This will run the app in the development mode.
 
 ```sh
- yarn start --proxy https://debug.dhis2.org/dev --proxyPort 8082
+ yarn start
 ```
 
 From the browser, go to [http://localhost:3000](http://localhost:3000). You will see the following page:
@@ -80,7 +80,7 @@ From the browser, go to [http://localhost:3000](http://localhost:3000). You will
 ![](../assets/new-app-login-page.png)
 
 Before you sign in, you need to log in to the DHIS2 instance which will be your **server**:
-  - Go to: https://debug.dhis2.org/dev 
+  - Go to: https://dev.im.dhis2.org/academy-web
   - You will see this page:
 ![](../assets/image-of-login.png)
   - Sign in as username: `admin` and password: `district`
@@ -88,7 +88,7 @@ Before you sign in, you need to log in to the DHIS2 instance which will be your 
 * Finally, go back to [http://localhost:3000](http://localhost:3000) and enter the following:
 
 ```
-server: http://localhost:8082
+server: https://dev.im.dhis2.org/academy-web
 username: admin
 password: district
 ```
@@ -96,24 +96,23 @@ password: district
 The code should look like this when you run it for the first time:
 
 
-## Starting work each day
+## Workflow
 
-We recommend that you create a new branch from your repository at the start of each day of instructions. The workflow should be the following:
+While in a real-life project, we would encourage that you open a pull request (PR) for each task, get the PR reviewed, and the finally merge it into your main branch, we will be performing a simplified 
 
-1. Create a new branch in your repository
-1. Work on this branch and submit changes
-1. Create a Pull Request (PR) against your repository
-1. Receive review from instructors
-1. Merge your Pull Request (PR) into 
+1. Optional: Create a new branch in your repository
+1. Work on this branch and commit changes as
+1. Create a Pull Request (PR) against the original repository's main branch (you can create this)
+1. Instructors will provide feedback on your submissions, either throughout the course, or after the completion of the course.
 
-### Create a new branch in your repository
+### Creating a new branch in your repository
 
 You can [create a branch](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch) on your GitHub repository. You can give your branch a name that matches the day, for example: `day2`
 * Or from your terminal:
 
 ```
-git checkout -b day2
-# A new branch day2 will be created
+git checkout -b working
+# A new branch working will be created
 ```
 
 Make sure you're on the right branch when doing work!
@@ -136,16 +135,14 @@ The first time you push your new branch you will need to run `git push --set-ups
 Make sure to run `yarn lint` and resolve any errors before commiting. Then run `yarn format` to make sure there are no style validations. This will keep the code readable.
 :::
 
-### Create a Pull Request (PR) against your repo
+### Create a Pull Request (PR) against the original repo
 
-Once you push the changes to your repository, the **Compare & pull request** green button will appear on GitHub. Click and follow the instructions. Add a name for your PR (e.g. `Day2`) and leave a comment. 
+Once you push the changes to your repository, the **Compare & pull request** green button will appear on GitHub. Click and follow the instructions. Add a name for your PR (e.g. `Tom 2024 Academy`) and leave a comment. 
 
-Open a pull request by clicking the `Create pull request` green button (but don't do the next step of merging)
+Open a pull request by clicking the `Create pull request` green button.
+
+
 
 ### Receive review from instructors
 
 You can request a review from the instructors by clicking on reviewers and adding us as reviewers. We will, however, provide most of our feedback during the day in person 😊.
-
-### Merge your Pull Request (PR)
-
-You can merge your PR into your `main` branch once instructors have given the go ahead ✨.

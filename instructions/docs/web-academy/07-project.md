@@ -1,5 +1,5 @@
 ---
-title: Final project
+title: Day 5 | Closing presentations
 sidebar_position: 80
 ---
 
@@ -8,7 +8,7 @@ Will we have a project? will it be only on the last day(s)
 - maybe it's not necessary this time if they're starting from scratch
 :::
 
-## Day 5 (Friday)
+## Agenda
 | Time | Topic | |
 | --- | --- | --- |
 | 09:00 - 10:30 | Closing Workshop | |
