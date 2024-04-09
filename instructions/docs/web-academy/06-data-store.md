@@ -9,6 +9,19 @@ Owned and will be updated by **Sakibou**
 Content here is draft copy from 2022 workshop: https://github.com/dhis2/academy-web-app-dev-2022/tree/main/workshop/06-generic-dhis2-apps
 :::
 
+## Day 4 (Thursday)
+| Time | Topic | |
+| --- | --- | --- |
+| 09:00 - 10:30 | Opening Workshop | Data Store |
+| 10:30 - 11:00 | _coffee break_ | |
+| 11:00 - 12:30 | Workshop | Data Store |
+| 12:30 - 13:30 | _lunch break_ | |
+| 13:30 - 15:00 | Workshop | Making apps generic |
+| 15:00 - 15:30 | _coffee break_ | |
+| 15:30 - 16:30 | Workshop | |
+| 16:30 - 16:45 | Closing | |
+| 16:45 - 17:00 | Q&A (with French support) | |
+
 # Making generic DHIS2 apps
 
 Some handy links:

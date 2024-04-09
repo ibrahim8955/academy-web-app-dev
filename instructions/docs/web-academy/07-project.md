@@ -8,8 +8,17 @@ Will we have a project? will it be only on the last day(s)
 - maybe it's not necessary this time if they're starting from scratch
 :::
 
+## Day 5 (Friday)
+| Time | Topic | |
+| --- | --- | --- |
+| 09:00 - 10:30 | Closing Workshop | |
+| 10:30 - 11:00 | _coffee break_ | |
+| 11:00 - 12:30 | Workshop | |
+| 12:30 - 13:30 | _lunch break_ | |
+| 13:30 - 15:00 | Workshop | |
+| 15:00 - 15:30 | _coffee break / closing_ | |
 
-# Final Project: Build a DHIS2 application
+## Final Project: Build a DHIS2 application
 
 This project will focus on what you've learned during the academy and you will take that knowledge to build a DHIS2 application. 🎊
 

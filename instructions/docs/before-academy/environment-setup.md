@@ -3,9 +3,9 @@ title: Setup
 sidebar_position: 20
 ---
 
-# DHIS2 App Development Academy Environment Setup
+# DHIS2 Web App Academy Environment Setup
 
-In this course, we will use the DHIS2 App Platform to help with building of our DHIS2 apps. To do this you need to get the d2 CLI working.
+In this course, we will use the DHIS2 App Platform to help with building of our DHIS2 apps. To do this you need to get the d2 CLI working. We will also be working in GitHub, and you need to have a GitHub account.
 
 
 ## Setting up d2 CLI
@@ -78,4 +78,7 @@ DHIS2 web apps are designed to be connected to a DHIS2 backend. Throughout the a
 The easiest way to set up a local DHIS2 instance is to use Docker. [This page](https://developers.dhis2.org/docs/tutorials/dhis2-docker) has details on how to set up your local instance with Docker. 
 
 
+## GitHub Account
+
+In this course, we will be working with GitHub. If you do not already have a personal GitHub account, please sign up for an account at https://github.com/.
 

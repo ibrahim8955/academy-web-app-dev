@@ -13,6 +13,18 @@ sidebar_position: 50
 - [ ] Other advanced use cases for the Data Service hooks (dynamic queries, refetching, lazy mode etc..)
 :::
 
+## Day 3 (Wednesday)
+| Time | Topic | |
+| --- | --- | --- |
+| 09:00 - 10:30 | Opening Workshop | Overview and Basic Hooks (`useConfig` and `useAlert`) |
+| 10:30 - 11:00 | _coffee break_ | |
+| 11:00 - 12:30 | Workshop | App Runtime: API overview, Query Playground and Data Queries |
+| 12:30 - 13:30 | _lunch break_ | |
+| 13:30 - 15:00 | Workshop | App Runtime: Mutations |
+| 15:00 - 15:30 | _cofFee break_ | |
+| 15:30 - 16:30 | Workshop | App Runtime: Advanced Data Queries |
+| 16:30 - 16:45 | Closing | |
+| 16:45 - 17:00 | Q&A (with French support) | |
 
 ## Presentation
 
