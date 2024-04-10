@@ -87,9 +87,10 @@ The expected result should not look much different except that it's in the rever
 Add a query to get the current logged in user info, and show their name and email. 
 :::
 
-:::danger
-@todo: clarify partial updates with PATCH
-:::
+#### The expected result
+On top of the table, show the current user `displayName` and `email`. This information can be retrieved from calling `api/me` endpoint (but you should use the same data query for attributes for this exercise).
+
+![Show user info from the API](../assets/appruntime-workshop/task-user-info.png)
 
 
 ## Mutations
@@ -103,6 +104,11 @@ Add a query to get the current logged in user info, and show their name and emai
 - Update the form to create a mutation to create a new entity when submitting the form.
 - Add a delete icon in the tables' rows to delete an entity using a Delete mutation.
 :::
+
+:::danger
+@todo: clarify partial updates with PATCH
+:::
+
 
 ### Task 3.2 (optional bonus)
 
