@@ -35,15 +35,31 @@ sidebar_position: 50
 
 ## Overview and Basic hooks
 
-### Task 1.1 - useAlert
+
+### Task 1.1 - useConfig
 :::info[Requirement]
-Replace the alert in the `Form` view with an [alert from the UI library](https://ui.dhis2.nu/components/alertbar) 
+Get the DHIS2 configuration using [useConfig hook](https://developers.dhis2.org/docs/app-runtime/hooks/useConfig) and show the API version on the home page similar to the screenshot below (look up the correct UI component).
+
+- **Hint**: Lookup the correct UI component in the [documentation](https://ui.dhis2.nu/), and don't forget about internationalisation (if you've set it up in the previous day)
 ::: 
 
-### Task 1.2 - useConfig
+#### The expected result
+![Display the API version from the server config](../assets/appruntime-workshop/task-useconfig.png)
+
+
+### Task 1.2 - useAlert
 :::info[Requirement]
-Get the DHIS2 configuration using [useConfig hook](https://developers.dhis2.org/docs/app-runtime/hooks/useConfig) and show it at the bottom of the side bar.
+Replace the alert in the `Form` view with an [alert from the UI library](https://ui.dhis2.nu/components/alertbar). You _should_ use the [useAlert](https://developers.dhis2.org/docs/app-runtime/hooks/useAlert) hook which wraps the UI component and makes it easier to a DHIS2 application.
 ::: 
+
+#### The expected result
+You should display a **success** message with the stringified values of the form (similar to what the _alert_ used to show previously).
+
+![Show success message on submitting form](../assets/appruntime-workshop/task-alert.png)
+
+You should also handle the **error** state. For this exercise, you can simulate an error in the code.
+
+![Show error message on submitting form](../assets/appruntime-workshop/task-alert-error.png)
 
 
 ## Data Queries
@@ -53,8 +69,16 @@ Get the DHIS2 configuration using [useConfig hook](https://developers.dhis2.org/
 ### Task 2.1 - useDataQuery
 
 :::info[Requirement]
-Replace the _hardcoded_ list of attributes with the list of attributes from the API
+Replace the _hardcoded_ list of attributes with the list of attributes from the API. For the API call, we want to:
+- only display 5 attributes per page
+- order by `displayName` in descending order
 :::
+
+#### The expected result
+The expected result should not look much different except that it's in the reverse order and displaying a smaller number of attributes. The result should be coming from the API rather than the hardcoded list.
+
+![Show list of attributes from the API](../assets/appruntime-workshop/task-use-data-query.png)
+
 
 ### Task 2.2 - parallel queries
 
@@ -64,11 +88,8 @@ Add a query to get the current logged in user info, and show their name and emai
 :::
 
 :::danger
-@todo: update screenshot
 @todo: clarify partial updates with PATCH
-@todo: is there a more suitable (less contrived) query to run in parallel?
 :::
-![](../assets/indicators.png)
 
 
 ## Mutations
