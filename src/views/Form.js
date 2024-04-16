@@ -1,4 +1,11 @@
-import { ReactFinalForm } from '@dhis2/ui'
+import {
+    ReactFinalForm,
+    InputFieldFF,
+    SingleSelectFieldFF,
+    SwitchFieldFF,
+    hasValue,
+    Button,
+} from '@dhis2/ui'
 import React from 'react'
 import styles from './Form.module.css'
 
@@ -31,12 +38,81 @@ export const Form = () => (
                 <form onSubmit={handleSubmit}>
                     <div className={styles.row}>
                         <Field
+                            name="title"
+                            label="Title"
+                            component={SingleSelectFieldFF}
+                            className={styles.title}
+                            initialValue={'None'}
+                            options={[{ label: 'None', value: 'None' }]}
+                        />
+                    </div>
+
+                    <div className={styles.row}>
+                        <Field
                             name="surname"
                             label="Surname"
-                            component={'input'}
+                            component={InputFieldFF}
                             className={styles.surname}
-                            initialValue={'Traore'}
+                            validate={hasValue}
                         />
+                        <Field
+                            name="firstname"
+                            label="First Name"
+                            component={InputFieldFF}
+                            className={styles.firstname}
+                            validate={hasValue}
+                        />
+                    </div>
+                    <div className={styles.row}>
+                        <Field
+                            name="username"
+                            label="User name"
+                            component={InputFieldFF}
+                            className={styles.firstname}
+                            validate={hasValue}
+                        />
+                    </div>
+
+                    <div className={styles.row}>
+                        <Field
+                            name="password"
+                            label="Password"
+                            component={InputFieldFF}
+                            className={styles.firstname}
+                            type="password"
+                            validate={hasValue}
+                        />
+                    </div>
+                    <div className={styles.row}>
+                        <Field
+                            name="email"
+                            label="E-mail address"
+                            component={InputFieldFF}
+                            className={styles.email}
+                            validate={hasValue}
+                        />
+                    </div>
+                    <div className={styles.row}>
+                        <Field
+                            name="confirmEmail"
+                            label="Confirm E-mail address"
+                            component={InputFieldFF}
+                            className={styles.email}
+                            validate={hasValue}
+                        />
+                    </div>
+
+                    <div className={styles.row}>
+                        <Field
+                            name="receiveNewletter"
+                            label="I want to receive the newsletter"
+                            component={SwitchFieldFF}
+                        />
+                    </div>
+                    <div className={styles.row}>
+                        <Button primary type="submit">
+                            Submit form
+                        </Button>
                     </div>
                 </form>
             )}
