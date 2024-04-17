@@ -63,7 +63,7 @@ const StudentList = () => {
         { lazy: true }
     )
     const deleteMutation = () => {} // @TODO: replace with something like  `const [deleteMutation] = useDataMutation(DELETE_MUTATION)`
-    const [sharingMutation] = useUpdateSharing() // @TODO: you need to
+    const [sharingMutation] = useUpdateSharing() // @TODO: you need to implement a custom hook returning a mutation
 
     const [addModalOpen, setAddModalOpen] = useState(false)
     const [updateParticipantDetails, setUpdateParticipantDetails] =
