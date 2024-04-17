@@ -5,11 +5,50 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-02-21T09:52:34.730Z\n"
-"PO-Revision-Date: 2024-02-21T09:52:34.730Z\n"
+"POT-Creation-Date: 2024-04-16T22:58:48.740Z\n"
+"PO-Revision-Date: 2024-04-16T22:58:48.740Z\n"
 
 msgid "New name"
 msgstr "New name"
 
 msgid "Add Visualization"
 msgstr "Add Visualization"
+
+msgid "Update participant"
+msgstr "Update participant"
+
+msgid "Add participant"
+msgstr "Add participant"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Country of residence"
+msgstr "Country of residence"
+
+msgid "Days attended"
+msgstr "Days attended"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Add"
+msgstr "Add"
+
+msgid "Search for participants"
+msgstr "Search for participants"
+
+msgid "Favorite foods"
+msgstr "Favorite foods"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Set to read only"
+msgstr "Set to read only"

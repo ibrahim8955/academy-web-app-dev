@@ -1,0 +1,22 @@
+.studentListContainer {
+    margin-inline: 8px;
+}
+
+.filterSelect {
+    min-width: 800px;
+    display: flex;
+    align-items: center;
+    margin-block: 16px;
+}
+
+.filterSelect > div {
+    margin-inline-end: 8px;
+}
+
+.filterField {
+    width: 400px; 
+}
+
+.addParticipantButton {
+    margin-block-start: 8px;
+}
