@@ -31,11 +31,14 @@ const DATASTORE_OVERVIEW = {
 const DELETE_MUTATION = {}
 
 const FilterSelection = ({ refetch, loadingFilterBtn }) => {
-    const [filter, setFilter] = useState(null)
+    const [filter, setFilter] = useState({ property: 'name', value: '' })
 
     const onSearch = () => {
         if (filter) {
-            const filterString = 'country:ilike:' + filter
+            const filterString =
+                filter.property && filter.value
+                    ? `${filter.property}:ilike:${filter.value}`
+                    : ''
             refetch({ filter: [filterString] })
         }
     }
@@ -44,8 +47,10 @@ const FilterSelection = ({ refetch, loadingFilterBtn }) => {
         <div className={styles.filterSelect}>
             <SingleSelect
                 prefix={'Filter option'}
-                selected="country"
-                onChange={() => {}}
+                selected={filter.property}
+                onChange={({ selected }) =>
+                    setFilter({ ...filter, property: selected })
+                }
             >
                 <SingleSelectOption
                     label={i18n.t('Country of residence')}
@@ -55,8 +60,8 @@ const FilterSelection = ({ refetch, loadingFilterBtn }) => {
                 <SingleSelectOption label={i18n.t('Name')} value="name" />
             </SingleSelect>
             <InputField
-                value={filter}
-                onChange={({ value }) => setFilter(value)}
+                value={filter.value}
+                onChange={({ value }) => setFilter({ ...filter, value })}
                 className={styles.filterField}
             ></InputField>
             <Button primary onClick={onSearch} loading={loadingFilterBtn}>
@@ -95,6 +100,7 @@ const StudentList = () => {
                 open={addModalOpen || Boolean(updateParticipantDetails)}
                 updateParticipantDetails={updateParticipantDetails}
                 closeAddUpdateModal={closeAddUpdateModal}
+                refetch={refetch}
             />
             <FilterSelection refetch={refetch} loadingFilterBtn={loading} />
             {(loading || fetching) && (

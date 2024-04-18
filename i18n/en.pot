@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-04-18T14:06:13.341Z\n"
-"PO-Revision-Date: 2024-04-18T14:06:13.341Z\n"
+"POT-Creation-Date: 2024-04-18T16:16:01.599Z\n"
+"PO-Revision-Date: 2024-04-18T16:16:01.599Z\n"
 
 msgid "Add participant"
 msgstr "Add participant"
@@ -43,3 +43,18 @@ msgstr "Update"
 
 msgid "Set to read only"
 msgstr "Set to read only"
+
+msgid " Couldn't load attributes list"
+msgstr " Couldn't load attributes list"
+
+msgid "Value Type"
+msgstr "Value Type"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Number"
+msgstr "Number"
+
+msgid "Save"
+msgstr "Save"

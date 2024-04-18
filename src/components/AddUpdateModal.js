@@ -13,18 +13,29 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './AddUpdateModal.module.css'
-import { DATASTORE_NAME } from '../constants'
+import { DATASTORE_KEY, DATASTORE_NAME } from '../constants'
 import { useAlert, useDataMutation } from '@dhis2/app-runtime'
+import { useState } from 'react'
 
 const { Field, Form: RFForm } = ReactFinalForm
 
 const addStudentMutation = {
-    resource: `dataStore/${DATASTORE_NAME}/Ibrahim`,
+    resource: `dataStore/${DATASTORE_NAME}/${DATASTORE_KEY}`,
     type: 'create',
     data: ({ name, country, daysAttended }) => ({
         name,
         country,
-        daysAttended,
+        daysAttended: [...daysAttended],
+    }),
+}
+
+const updateStudentMutation = {
+    resource: `dataStore/${DATASTORE_NAME}/${DATASTORE_KEY}`,
+    type: 'update',
+    data: ({ name, country, daysAttended }) => ({
+        name,
+        country,
+        daysAttended: [...daysAttended],
     }),
 }
 
@@ -32,29 +43,60 @@ export const AddUpdateModal = ({
     open,
     closeAddUpdateModal,
     updateParticipantDetails,
+    refetch
 }) => {
+    const [loading, setLoading] = useState(false)
     const { show } = useAlert(
         ({ message }) => message,
         ({ type }) => type
     )
+
     const [mutate] = useDataMutation(addStudentMutation, {
         onComplete: async () => {
+            await refetch()
             show({
-                message: 'Operation successfully !',
+                message: 'Création successfully !',
                 type: { success: true },
             })
+            closeAddUpdateModal()
+            setLoading(false)
         },
+
+        onError: async (err) => {
+            show({
+                message: 'Could not proceed !:' + err.message,
+                type: { critical: true },
+            })
+            setLoading(false)
+        },
+    })
+
+    const [udpateMutate] = useDataMutation(updateStudentMutation, {
+        onComplete: async () => {
+            show({
+                message: 'Update successfully !',
+                type: { success: true },
+            })
+            closeAddUpdateModal()
+            setLoading(false)
+        },
+
         onError: async (err) => {
             show({
                 message: 'Could not proceed !',
                 type: { critical: true },
             })
+            setLoading(false)
         },
     })
-    const addParticipant = (formValues) => {
-        mutate(formValues)
+
+    const addParticipant = async (formValues) => {
+        setLoading(true)
+        await mutate(formValues)
     }
-    const updateParticipant = () => {}
+    const updateParticipant = async (formValues) => {
+        await udpateMutate(formValues)
+    }
 
     return (
         <Modal hide={!open} onClose={closeAddUpdateModal}>
@@ -125,7 +167,11 @@ export const AddUpdateModal = ({
                                     <Button onClick={closeAddUpdateModal}>
                                         {i18n.t('Cancel')}
                                     </Button>
-                                    <Button primary type="sub">
+                                    <Button
+                                        primary
+                                        type="sub"
+                                        loading={loading}
+                                    >
                                         {i18n.t('Add')}
                                     </Button>
                                 </ButtonStrip>
