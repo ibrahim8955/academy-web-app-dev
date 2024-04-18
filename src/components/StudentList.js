@@ -20,17 +20,26 @@ import StudentTable from './StudentTable.js'
 const DATASTORE_OVERVIEW = {
     dataStore: {
         resource: `dataStore/${DATASTORE_NAME}`,
-        params: {
+        params: ({ filter }) => ({
             fields: '.',
-        },
+            filter: [...filter],
+        }),
     },
 }
 
 // eslint-disable-next-line no-unused-vars
 const DELETE_MUTATION = {}
 
-const FilterSelection = ({ refetch }) => {
-    // const [filter, setFilter] = useState(null)
+const FilterSelection = ({ refetch, loadingFilterBtn }) => {
+    const [filter, setFilter] = useState(null)
+
+    const onSearch = () => {
+        if (filter) {
+            const filterString = 'country:ilike:' + filter
+            refetch({ filter: [filterString] })
+        }
+    }
+
     return (
         <div className={styles.filterSelect}>
             <SingleSelect
@@ -45,8 +54,12 @@ const FilterSelection = ({ refetch }) => {
                 />
                 <SingleSelectOption label={i18n.t('Name')} value="name" />
             </SingleSelect>
-            <InputField value="o" className={styles.filterField}></InputField>
-            <Button primary onClick={refetch}>
+            <InputField
+                value={filter}
+                onChange={({ value }) => setFilter(value)}
+                className={styles.filterField}
+            ></InputField>
+            <Button primary onClick={onSearch} loading={loadingFilterBtn}>
                 {i18n.t('Search for participants')}
             </Button>
         </div>
@@ -55,6 +68,7 @@ const FilterSelection = ({ refetch }) => {
 
 FilterSelection.propTypes = {
     refetch: PropTypes.func,
+    loadingFilterBtn: PropTypes.bool,
 }
 
 const StudentList = () => {
@@ -82,7 +96,7 @@ const StudentList = () => {
                 updateParticipantDetails={updateParticipantDetails}
                 closeAddUpdateModal={closeAddUpdateModal}
             />
-            <FilterSelection refetch={refetch} />
+            <FilterSelection refetch={refetch} loadingFilterBtn={loading} />
             {(loading || fetching) && (
                 <CenteredContent>
                     <CircularLoader />

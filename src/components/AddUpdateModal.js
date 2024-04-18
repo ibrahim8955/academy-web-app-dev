@@ -13,15 +13,47 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './AddUpdateModal.module.css'
+import { DATASTORE_NAME } from '../constants'
+import { useAlert, useDataMutation } from '@dhis2/app-runtime'
 
 const { Field, Form: RFForm } = ReactFinalForm
+
+const addStudentMutation = {
+    resource: `dataStore/${DATASTORE_NAME}/Ibrahim`,
+    type: 'create',
+    data: ({ name, country, daysAttended }) => ({
+        name,
+        country,
+        daysAttended,
+    }),
+}
 
 export const AddUpdateModal = ({
     open,
     closeAddUpdateModal,
     updateParticipantDetails,
 }) => {
-    const addParticipant = () => {}
+    const { show } = useAlert(
+        ({ message }) => message,
+        ({ type }) => type
+    )
+    const [mutate] = useDataMutation(addStudentMutation, {
+        onComplete: async () => {
+            show({
+                message: 'Operation successfully !',
+                type: { success: true },
+            })
+        },
+        onError: async (err) => {
+            show({
+                message: 'Could not proceed !',
+                type: { critical: true },
+            })
+        },
+    })
+    const addParticipant = (formValues) => {
+        mutate(formValues)
+    }
     const updateParticipant = () => {}
 
     return (
@@ -93,7 +125,9 @@ export const AddUpdateModal = ({
                                     <Button onClick={closeAddUpdateModal}>
                                         {i18n.t('Cancel')}
                                     </Button>
-                                    <Button primary>{i18n.t('Add')}</Button>
+                                    <Button primary type="sub">
+                                        {i18n.t('Add')}
+                                    </Button>
                                 </ButtonStrip>
                             </ModalActions>
                         </form>
