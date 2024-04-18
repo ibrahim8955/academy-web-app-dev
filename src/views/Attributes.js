@@ -17,6 +17,7 @@ import {
     Button,
 } from '@dhis2/ui'
 import i18n from '@dhis2/d2-i18n'
+import { RiDeleteBin2Line } from 'react-icons/ri'
 
 import { useDataMutation, useDataQuery, useAlert } from '@dhis2/app-runtime'
 import styles from './Form.module.css'
@@ -195,6 +196,15 @@ export const Attributes = () => {
                                                     )
                                                 }}
                                                 small
+                                                icon={
+                                                    <div>
+                                                        <RiDeleteBin2Line
+                                                            style={{
+                                                                fontSize: '16px',
+                                                            }}
+                                                        />
+                                                    </div>
+                                                }
                                             >
                                                 Delete
                                             </Button>

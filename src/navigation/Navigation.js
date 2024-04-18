@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Menu, MenuItem } from '@dhis2/ui'
 import { useNavigate, useMatch } from 'react-router-dom'
-import { IoHomeSharp } from 'react-icons/io5'
 import { MdAttribution } from 'react-icons/md'
-import { SiElementor } from 'react-icons/si'
+import { FaRegListAlt } from 'react-icons/fa'
 import { AiOutlineForm } from 'react-icons/ai'
+import { IoHomeOutline } from 'react-icons/io5'
 
 const NavigationItem = ({ path, label, icon }) => {
     // function to navigate to different route
@@ -42,7 +42,7 @@ export const Navigation = () => (
             // Menu item for the home page
             label="Home"
             path="/"
-            icon={<IoHomeSharp style={{ fontSize: '16px' }} />}
+            icon={<IoHomeOutline style={{ fontSize: '16px' }} />}
         />
 
         <NavigationItem
@@ -56,7 +56,7 @@ export const Navigation = () => (
             // Menu item for the meta data page
             label="Indicators"
             path="/indicators"
-            icon={<SiElementor style={{ fontSize: '16px' }} />}
+            icon={<FaRegListAlt style={{ fontSize: '16px' }} />}
         />
 
         <NavigationItem
