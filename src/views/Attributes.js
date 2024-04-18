@@ -1,5 +1,4 @@
-import React from 'react'
-import { useGetAttributes } from '../hooks/index.js'
+import React, { useState } from 'react'
 import {
     Table,
     TableHead,
@@ -8,18 +7,148 @@ import {
     TableRow,
     TableCell,
     TableBody,
-} from '@dhis2-ui/table'
+    CircularLoader,
+    Center,
+    NoticeBox,
+    ReactFinalForm,
+    InputFieldFF,
+    SingleSelectFieldFF,
+    hasValue,
+    Button,
+} from '@dhis2/ui'
+import i18n from '@dhis2/d2-i18n'
+
+import { useDataMutation, useDataQuery, useAlert } from '@dhis2/app-runtime'
+import styles from './Form.module.css'
+
+const { Field, Form: RFForm } = ReactFinalForm
+
+const attributeQuery = {
+    attributes: {
+        resource: 'attributes',
+        params: {
+            fields: ['id', 'displayName', 'created'],
+            pageSize: 5,
+            order: 'displayName:desc',
+        },
+    },
+    me: {
+        resource: 'me',
+        params: {
+            fields: ['displayName', 'email'],
+        },
+    },
+}
+
+const createAttributMutation = {
+    resource: 'attributes',
+    type: 'create',
+    data: (payload) => payload,
+}
+
+const deleteAttributeMutation = {
+    resource: 'attributes',
+    type: 'delete',
+    id: (id) => {
+        console.log('id: ', id)
+        return id
+    },
+}
 
 export const Attributes = () => {
     // we get the data using a custom hook
     // we will update this implementation after learning about app-runtime
-    const { loading, error, data } = useGetAttributes()
+    const { show } = useAlert(
+        (value) => {
+            if (value.critical) return 'Could not proceed : ' + value.message
+            if (value.success) return 'Operation success !'
+        },
+        (value) => {
+            if (value.critical) return { critical: true }
+            if (value.success) return { success: true }
+        }
+    )
+
+    const {
+        loading,
+        error,
+        data,
+        refetch: loadAttribute,
+    } = useDataQuery(attributeQuery)
+
+    const [mutate] = useDataMutation(createAttributMutation, {
+        onComplete: () => {
+            loadAttribute()
+            show({ success: true })
+            setLoadingCreation(false)
+        },
+        onError: (error) => {
+            show({
+                critical: true,
+                message:
+                    error?.response?.errorReports?.[0]?.message ||
+                    error?.message,
+            })
+            setLoadingCreation(false)
+        },
+    })
+
+    const [deleteMutate] = useDataMutation(deleteAttributeMutation, {
+        onComplete: () => {
+            loadAttribute()
+            show({ success: true })
+            setLoadingCreation(false)
+        },
+        onError: (error) => {
+            show({
+                critical: true,
+                message:
+                    error?.response?.errorReports?.[0]?.message ||
+                    error?.message,
+            })
+            setLoadingCreation(false)
+        },
+    })
+
+    const [loadinCreation, setLoadingCreation] = useState(false)
+
+    const onSubmit = (formValues) => {
+        setLoadingCreation(true)
+        mutate(formValues)
+    }
+
+    const handleDestroyAttribute = (id) => deleteMutate(id)
+
+    if (loading)
+        return (
+            <Center>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <CircularLoader small />
+                    <div style={{ marginLeft: 10 }}>Loading ....</div>
+                </div>
+            </Center>
+        )
+
+    if (error)
+        return (
+            <Center>
+                <NoticeBox error title="Error loading attributes ">
+                    {i18n.t(" Couldn't load attributes list")} : {error.message}
+                </NoticeBox>
+            </Center>
+        )
 
     return (
         <div>
-            <h1>Attributes</h1>
-            {/* <p>loading: {JSON.stringify(loading)}</p>
-            <p>error message: {error?.message}</p> */}
+            <h1>attributes List</h1>
+
+            <div style={{ margin: '30px 0px' }}>
+                Attribute visible to{' '}
+                <span style={{ fontWeight: 'bold' }}>
+                    {data?.me?.displayName} ( {data?.me?.email}
+                </span>
+                )
+            </div>
             {
                 // if there is any data available
                 data?.attributes?.attributes && (
@@ -27,27 +156,91 @@ export const Attributes = () => {
                         <Table>
                             <TableHead>
                                 <TableRowHead>
-                                    <TableCellHead>Name</TableCellHead>
-                                    <TableCellHead>Unique</TableCellHead>
+                                    <TableCellHead>ID</TableCellHead>
+                                    <TableCellHead>
+                                        Indicator name
+                                    </TableCellHead>
+                                    <TableCellHead>Created at</TableCellHead>
                                 </TableRowHead>
                             </TableHead>
                             <TableBody>
                                 {data.attributes.attributes.map((attribute) => (
                                     <TableRow key={attribute.id}>
+                                        <TableCell>{attribute.id}</TableCell>
                                         <TableCell>
                                             {attribute.displayName}
                                         </TableCell>
                                         <TableCell>
-                                            {attribute.unique ? 'Yes' : 'No'}
+                                            {attribute.created}
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button
+                                                destructive
+                                                onClick={() =>
+                                                    handleDestroyAttribute(
+                                                        attribute.id
+                                                    )
+                                                }
+                                                small
+                                            >
+                                                Delete
+                                            </Button>
                                         </TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
                         </Table>
-                        {/* {JSON.stringify(data.attributes.attributes, null, 4)} */}
                     </div>
                 )
             }
+
+            <h1>Add an Attribute</h1>
+            <div>
+                <RFForm onSubmit={onSubmit}>
+                    {({ handleSubmit }) => (
+                        <form onSubmit={handleSubmit}>
+                            <div className={styles.row}>
+                                <Field
+                                    name="name"
+                                    label="Attribute Name *"
+                                    component={InputFieldFF}
+                                    validate={hasValue}
+                                    className={styles.name}
+                                />
+                            </div>
+                            <div className={styles.row}>
+                                <Field
+                                    name="valueType"
+                                    label={i18n.t('Value Type')}
+                                    component={SingleSelectFieldFF}
+                                    className={styles.title}
+                                    initialValue="TEXT"
+                                    options={[
+                                        {
+                                            label: i18n.t('Text'),
+                                            value: 'TEXT',
+                                        },
+                                        {
+                                            label: i18n.t('Number'),
+                                            value: 'NUMBER',
+                                        },
+                                    ]}
+                                />
+                            </div>
+
+                            <div className={styles.row}>
+                                <Button
+                                    loading={loadinCreation}
+                                    type="submit"
+                                    primary
+                                >
+                                    {i18n.t('Save')}
+                                </Button>
+                            </div>
+                        </form>
+                    )}
+                </RFForm>
+            </div>
         </div>
     )
 }

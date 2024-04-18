@@ -5,8 +5,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-04-17T10:16:43.078Z\n"
-"PO-Revision-Date: 2024-04-17T10:16:43.078Z\n"
+"POT-Creation-Date: 2024-04-17T16:03:11.535Z\n"
+"PO-Revision-Date: 2024-04-17T16:03:11.535Z\n"
+
+msgid " Couldn't load attributes list"
+msgstr " Couldn't load attributes list"
+
+msgid "Value Type"
+msgstr "Value Type"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Number"
+msgstr "Number"
+
+msgid "Save"
+msgstr "Save"
 
 msgid "Hello ibrahim"
 msgstr "Hello ibrahim"
+
+msgid " Couldn't load indicators list"
+msgstr " Couldn't load indicators list"

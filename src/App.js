@@ -2,8 +2,7 @@ import React from 'react'
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import styles from './App.module.css'
 import { Navigation } from './navigation/index.js'
-import { Form, Home, Attributes } from './views/index.js'
-import i18n from './locales/index.js'
+import { Form, Home, Attributes, Indicators } from './views/index.js'
 
 const MyApp = () => (
     <HashRouter
@@ -42,6 +41,13 @@ const MyApp = () => (
                         exact
                         path="/attributes"
                         element={<Attributes />}
+                    />
+                    <Route
+                        // indicators route, will render "indicators" component
+                        // when "/indicators" is the current url
+                        exact
+                        path="/indicators"
+                        element={<Indicators />}
                     />
                     <Route
                         // functions as default route, redirects to home

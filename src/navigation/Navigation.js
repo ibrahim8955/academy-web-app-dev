@@ -40,6 +40,12 @@ export const Navigation = () => (
         />
 
         <NavigationItem
+            // Menu item for the meta data page
+            label="Indicators"
+            path="/indicators"
+        />
+
+        <NavigationItem
             // Menu item for the Form page
             label="Form"
             path="/form"
