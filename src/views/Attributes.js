@@ -49,10 +49,7 @@ const createAttributMutation = {
 const deleteAttributeMutation = {
     resource: 'attributes',
     type: 'delete',
-    id: (id) => {
-        console.log('id: ', id)
-        return id
-    },
+    id: ({ id }) => id,
 }
 
 export const Attributes = () => {
@@ -77,8 +74,8 @@ export const Attributes = () => {
     } = useDataQuery(attributeQuery)
 
     const [mutate] = useDataMutation(createAttributMutation, {
-        onComplete: () => {
-            loadAttribute()
+        onComplete: async () => {
+            await loadAttribute()
             show({ success: true })
             setLoadingCreation(false)
         },
@@ -94,10 +91,10 @@ export const Attributes = () => {
     })
 
     const [deleteMutate] = useDataMutation(deleteAttributeMutation, {
-        onComplete: () => {
-            loadAttribute()
+        onComplete: async () => {
+            await loadAttribute()
             show({ success: true })
-            setLoadingCreation(false)
+            setLoadinDeleting(false)
         },
         onError: (error) => {
             show({
@@ -106,18 +103,24 @@ export const Attributes = () => {
                     error?.response?.errorReports?.[0]?.message ||
                     error?.message,
             })
-            setLoadingCreation(false)
+            setLoadinDeleting(false)
         },
     })
 
+    const [currentAttributeId, setCurrentAttributeId] = useState(null)
     const [loadinCreation, setLoadingCreation] = useState(false)
+    const [loadinDeleting, setLoadinDeleting] = useState(false)
 
     const onSubmit = (formValues) => {
         setLoadingCreation(true)
         mutate(formValues)
     }
 
-    const handleDestroyAttribute = (id) => deleteMutate(id)
+    const handleDestroyAttribute = async (id) => {
+        setLoadinDeleting(true)
+        await deleteMutate({ id })
+        setLoadinDeleting(false)
+    }
 
     if (loading)
         return (
@@ -161,6 +164,7 @@ export const Attributes = () => {
                                         Indicator name
                                     </TableCellHead>
                                     <TableCellHead>Created at</TableCellHead>
+                                    <TableCellHead>Actions</TableCellHead>
                                 </TableRowHead>
                             </TableHead>
                             <TableBody>
@@ -175,12 +179,21 @@ export const Attributes = () => {
                                         </TableCell>
                                         <TableCell>
                                             <Button
+                                                loading={
+                                                    attribute.id ===
+                                                    currentAttributeId
+                                                        ? loadinDeleting
+                                                        : false
+                                                }
                                                 destructive
-                                                onClick={() =>
+                                                onClick={() => {
+                                                    setCurrentAttributeId(
+                                                        attribute.id
+                                                    )
                                                     handleDestroyAttribute(
                                                         attribute.id
                                                     )
-                                                }
+                                                }}
                                                 small
                                             >
                                                 Delete
